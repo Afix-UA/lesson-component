@@ -1,0 +1,52 @@
+@import "_mixins.scss";
+@import "_basa.scss";
+@import "_fonts.scss";
+
+
+// // підключення стилів 
+@import "_comand.scss";
+@import "_page";
+body::-webkit-scrollbar {
+    width: toRem(14);
+
+    border:toRem(1) solid $bgColor;
+    
+}
+body::-webkit-scrollbar-thumb {
+    background-color:$textColor;
+    border-radius: toRem(2);    
+}
+
+
+[class*=__container] {
+    
+        @media (min-width:toEm(768)){
+            display: flex;
+        }
+}
+//  =========Page==========
+.page {
+
+    &__bio {}
+
+    &__content {
+        @include adaptiveValue("padding-top", 48, 28);
+        @include adaptiveValue("padding-left",48,0,0, $containerWidth, 568 );
+        @include adaptiveValue("padding-right",48,0,0, $containerWidth, 568 );
+    }
+}
+
+
+.content {
+
+    &__about,&__skills,&__expericenc {
+            @include adaptiveValue("margin-bottom", 48, 28);
+    }
+    &__skills { 
+    }
+
+    &__expericence {
+    }
+
+}
+

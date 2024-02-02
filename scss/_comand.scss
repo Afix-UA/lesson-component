@@ -1,0 +1,100 @@
+
+.social {
+   
+
+    &__items {
+        display: flex;
+        justify-content: center;
+        gap: toRem(10);
+        padding: toRem(10);
+
+
+    }
+
+    &__item {
+        
+       }
+
+    &__link {
+        color: #fff;
+        padding: toRem(8) ;
+        border-radius: toRem(10);
+        font-size: toRem(20);
+        transition:  background-color 0.3s ease 0s;
+        @media (any-hover: hover){
+            &:hover{
+                background-color: $bgColor;
+            }
+        }
+    }
+}
+
+.action {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__button {
+        display: flex;
+        justify-content:center
+        ;align-items: center;
+        color: #fff;
+        flex: 1 1 auto;
+        background-color: transparent;
+        transition:  background-color 0.3s ease 0s;
+        border: toRem(1) solid $bgColor;
+        padding: toRem(10) ;
+        @media (any-hover: hover){
+            &:hover{
+                background-color: $bgColor;
+               
+            }
+        }
+    }
+}
+
+.title {
+    color: $mainColor;
+    @include adaptiveValue("font-size", 40, 28);
+    font-weight: 600;
+    line-height: 1.2; /* 48/40 */
+    position: relative;
+    padding-bottom: toEm(25,40);
+    
+   
+   
+    &::after{
+        content:'';
+        width: toRem(10);
+        height: toRem(10);
+        position: absolute;
+        bottom: 0;
+        transform: translateY(-50%);
+        left: 0;
+        border: toRem(2) solid;
+        border-radius: 50%;
+        
+    }
+    
+    &::before{
+        content:'';
+        position: absolute;
+        bottom: toRem(9);
+        left: toRem(20);
+        width: toEm(50,40);
+        height: toRem(2);
+        background-color: $mainColor;
+    }
+}
+
+.text {
+    color: #eee;
+    font-weight: 400;
+    line-height: 1.5;
+    & p {
+        &:not(:last-child) {
+            margin-bottom: toRem(7);
+        }
+
+    }
+}
+
