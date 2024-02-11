@@ -29,28 +29,111 @@
     }
 }
 
+
+.social-popup {
+
+	&__items {
+        display: flex;
+        justify-content: center;
+        gap: toRem(10);
+        padding: toRem(10);
+        flex-wrap: wrap;
+        
+
+	}
+
+	&__item {
+	}
+	
+	&__link {
+        display: grid;
+        justify-content: center;
+        gap: toRem(10);
+        color: #fff;
+        padding: toRem(8)  toRem(30);
+        border-radius: toRem(10);
+        transition:  background-color 0.3s ease 0s;
+        & i {
+            font-size: toRem(30);
+            text-align: center;
+        }
+        @media (any-hover: hover){
+            &:hover{
+                background-color: $borderColor;
+            }
+        }
+        @media (max-width:$mobile){
+            padding: toRem(8)  toRem(10);
+        }
+		
+	}
+
+}
+
+.info {
+
+    &__items {
+        display: grid;
+       
+        @media (min-width:toEm(576)){
+            grid-template-columns: repeat(2,1fr);
+            margin: toRem(-4) toRem(-12);
+        }
+       
+        
+    }
+
+    &__item {
+        color:$textColor ;
+       
+        font-weight: 500;
+        line-height: 1.5; /* 24/16 */
+      
+        & a, & span {
+            padding-left: toRem(7);
+            color: $mainColor;
+           
+        }
+        & a {
+            text-decoration: underline;
+            @media (any-hover: hover){
+                &:hover{
+                   text-decoration: none;
+                }
+            }
+        }
+        @media (min-width:toEm(576)){
+            padding: toRem(4) toRem(12);
+        }
+    }
+}
+
 .action {
     display: flex;
     flex-wrap: wrap;
 
     &__button {
-        display: flex;
-        justify-content:center
-        ;align-items: center;
-        color: #fff;
-        flex: 1 1 auto;
-        background-color: transparent;
-        transition:  background-color 0.3s ease 0s;
-        border: toRem(1) solid $bgColor;
-        padding: toRem(10) ;
-        @media (any-hover: hover){
-            &:hover{
-                background-color: $bgColor;
-               
-            }
+        
+    }
+}
+.button {
+    display: flex;
+    justify-content:center
+    ;align-items: center;
+    color: #fff;
+    flex: 1 1 auto;
+    background-color: transparent;
+    transition:  background-color 0.3s ease 0s;
+    border: toRem(1) solid $bgColor;
+    padding: toRem(10) ;
+    @media (any-hover: hover){
+        &:hover{
+            background-color: $bgColor;
+           
         }
     }
 }
+
 
 .title {
     color: $mainColor;
@@ -60,8 +143,13 @@
     position: relative;
     padding-bottom: toEm(25,40);
     
-   
-   
+    &--sticky{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background-color: $borderColor;
+    }
     &::after{
         content:'';
         width: toRem(10);

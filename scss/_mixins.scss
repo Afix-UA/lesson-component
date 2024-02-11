@@ -82,7 +82,7 @@
     }
     gap: $gap;
     & > * {
-        @if ( min-width != "") {
+        @if ( $minWidth != "") {
             min-width: $minWidth;
         }
         flex: 1 1 calc( (100% - ( $gap * (#{$col} - 1))) / #{$col});
